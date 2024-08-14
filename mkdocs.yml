@@ -1,11 +1,18 @@
 site_name: 名笔记
 site_description: 全栈、DevOPS、Python、Go、Docker、Kubernetes、Linux、云原生、前端、后端、运维...
 site_url: https://www.numachen.github.io
+site_author: numa
+repo_name: numa
+repo_url: https://github.com/numachen/numachen.github.io
+copyright: "Copyright &copy; 2021 - 2024"
 
 theme:
   name: material
+  feature:
+    tabs: true
   features:
     - navigation.indexes
+  language: 'zh'
 
 hooks:
   - hooks/hooks.py
@@ -36,9 +43,9 @@ plugins:
 
 extra:
   social:
-    - icon: fontawesome/brands/mastodon
-      name: squidfunk on Mastodon
-      link: https://fosstodon.org/@squidfunk
+    - icon: fontawesome/brands/github
+      name: github
+      link: https://github.com/numachen/numachen.github.io
 
 markdown_extensions:
   - attr_list
