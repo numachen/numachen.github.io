@@ -57,10 +57,15 @@ nav:
   - 首页: index.md
   - 前端:
       - frontend/index.md
-      - frontend/tags.md
+      - Vue:
+          - frontend/vue/one.md
   - 后端:
       - backend/index.md
-      - backend/tags.md
-  - 云原生:
-      - blog/index.md
-      - blog/tags.md
+      - Flask:
+#          - backend/flask/myfirst.md
+          - backend/flask/one.md
+      - Django:
+          - backend/django/index.md
+#  - 云原生:
+#      - blog/index.md
+#      - blog/tags.md

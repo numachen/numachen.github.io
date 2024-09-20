@@ -20,3 +20,7 @@
 - mkdocs-material: https://github.com/squidfunk/mkdocs-material?tab=readme-ov-file
 - Plugins: https://github.com/mkdocs/catalog?tab=readme-ov-file#-plugins
 - [示例网站](https://derrors.github.io/)
+
+## 日志
+- 2024-09-06：
+  - 移除tags，后期需要在加；
