@@ -6,8 +6,8 @@ draft: true
 
 # Vue使用jsdiff/diff2html实现新旧数据对比的可视化
 
-## 1. 效果图
-![这是图片](../assets/img/diff.jpg "Magic Gardens")
+## 1. 问题描述
+在开发中，我们经常需要对比新旧数据，然后进行可视化展示，比如git的提交记录，代码的提交记录等。
 
 ## 2. 资料连接
 - http://incaseofstairs.com/jsdiff/
