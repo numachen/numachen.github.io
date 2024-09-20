@@ -8,7 +8,10 @@
 
 ## 部署说明
 - 本地编译： `mkdocs build`
-- 代码上传： `git push`
+- 代码上传：
+  - `git add *`
+  - `git commit -m "update"`
+  - `git push`
 - 访问网址： https://www.mingnotes.org.cn/
 
 ## 参考资料

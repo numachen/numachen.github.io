@@ -59,6 +59,8 @@ nav:
       - frontend/index.md
       - Vue:
           - frontend/vue/one.md
+      - Components:
+          - frontend/component/one.md
   - 后端:
       - backend/index.md
       - Flask:
