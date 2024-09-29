@@ -1,0 +1,1776 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="全栈、DevOPS、Python、Go、Docker、Kubernetes、Linux、云原生、前端、后端、运维...">
+      
+      
+        <meta name="author" content="numa">
+      
+      
+        <link rel="canonical" href="https://www.numachen.github.io/frontend/component/two/">
+      
+      
+        <link rel="prev" href="../one/">
+      
+      
+        <link rel="next" href="../../../backend/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
+    
+    
+      
+        <title>基于iView手撸一个Web页的API工具 - 名笔记</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#iviewwebapi" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="名笔记" class="md-header__button md-logo" aria-label="名笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            名笔记
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              基于iView手撸一个Web页的API工具
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/numachen/numachen.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    numa
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="名笔记" class="md-nav__button md-logo" aria-label="名笔记" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    名笔记
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/numachen/numachen.github.io" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    numa
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    首页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    前端
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            前端
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Vue
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Vue
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vue/one/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vue使用jsdiff/diff2html实现新旧数据对比的可视化
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Components
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Components
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../one/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    iview中的表格render搭配使用Tooltip 文字提示
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    基于iView手撸一个Web页的API工具
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    基于iView手撸一个Web页的API工具
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 问题描述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 资料连接
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 核心代码
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../backend/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    后端
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            后端
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Flask
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Flask
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/flask/one/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Flask 模板
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Django
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Django
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../backend/django/one/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Django 处理跨域
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 问题描述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 资料连接
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 核心代码
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="iviewwebapi">基于iView手撸一个Web页的API工具</h1>
+<h2 id="1">1. 问题描述</h2>
+<p>测试需要一个网页版的API请求工具，方便测试人员自定义请求流程，方便对接自己的后端服务</p>
+<h2 id="2">2. 资料连接</h2>
+<p>代码地址：https://gitee.com/daoiskong/treasure-box/tree/master/view-ui-project</p>
+<h2 id="3">3. 核心代码</h2>
+<pre><code class="language-html">&lt;template&gt;
+&lt;div&gt;
+  &lt;Form ref=&quot;sceneFormData&quot; :model=&quot;sceneFormData&quot; :rules=&quot;ruleInline&quot;&gt;
+    &lt;Card&gt;
+      &lt;Row&gt;
+        &lt;Col span=&quot;12&quot;&gt;
+          &lt;h2&gt;{{page || '创建请求链路'}}&lt;/h2&gt;
+        &lt;/Col&gt;
+        &lt;Col span=&quot;6&quot; offset=&quot;6&quot;&gt;
+            &lt;a href=&quot;#&quot;  @click=&quot;globalDrawer = true&quot;&gt;全局参数&lt;/a&gt; &lt;Divider type=&quot;vertical&quot; /&gt;
+            &lt;Button type=&quot;primary&quot; @click=&quot;saveScene('sceneFormData')&quot;&gt;保存&lt;/Button&gt;
+        &lt;/Col&gt;
+      &lt;/Row&gt;
+      &lt;Row style=&quot;margin: 15px 0 15px 0&quot;&gt;
+        &lt;Col span=&quot;4&quot;&gt;
+          &lt;FormItem prop=&quot;name&quot;&gt;
+            &lt;Input v-model=&quot;sceneFormData.name&quot; placeholder=&quot;请输入场景名称&quot; clearable /&gt;
+          &lt;/FormItem&gt;
+        &lt;/Col&gt;
+        &lt;Col span=&quot;19&quot; style=&quot;display: inline-block&quot; offset=&quot;1&quot;&gt;
+          &lt;Row&gt;
+            &lt;Col span=&quot;9&quot;&gt;
+              &lt;FormItem prop=&quot;host&quot;&gt;
+                &lt;Input v-model=&quot;sceneFormData.host&quot; placeholder=&quot;请输入域名&quot; clearable style=&quot;height: 10px;&quot;&gt;
+                  &lt;Select v-model=&quot;sceneDomainPre&quot; slot=&quot;prepend&quot; style=&quot;width: 80px&quot;&gt;
+                    &lt;Option value=&quot;http://&quot;&gt;http://&lt;/Option&gt;
+                    &lt;Option value=&quot;https://&quot;&gt;https://&lt;/Option&gt;
+                  &lt;/Select&gt;
+                &lt;/Input&gt;
+              &lt;/FormItem&gt;
+            &lt;/Col&gt;
+          &lt;/Row&gt;
+        &lt;/Col&gt;
+      &lt;/Row&gt;
+      &lt;RadioGroup v-model=&quot;sceneBtn&quot; type=&quot;button&quot; @on-change=&quot;switchGroup&quot; size=&quot;large&quot;&gt;
+        &lt;Radio label=&quot;场景配置&quot;&gt;&lt;/Radio&gt;
+        &lt;Radio label=&quot;施压配置&quot;&gt;&lt;/Radio&gt;
+      &lt;/RadioGroup&gt;
+    &lt;/Card&gt;
+
+&lt;!--创建链路--&gt;
+    &lt;div style=&quot;margin-top: 15px;&quot;&gt;
+      &lt;!--场景配置--&gt;
+      &lt;Card v-if=&quot;isShow&quot;&gt;
+        &lt;Button icon=&quot;md-add&quot; @click=&quot;handleAddLink&quot;&gt;新增串联链路&lt;/Button&gt;
+
+        &lt;div style=&quot;margin-top: 15px;&quot;&gt;
+          &lt;Card
+            style=&quot;margin-top: 7px;&quot;
+            v-for=&quot;(item, index) in sceneFormData.tasksets&quot;
+            :key=&quot;index&quot;
+          &gt;
+            &lt;Row&gt;
+              &lt;Col span=&quot;5&quot;&gt;
+                &lt;Icon type=&quot;ios-barcode-outline&quot; size=&quot;25&quot; style=&quot;margin-right: 7px;&quot; /&gt;
+                &lt;span v-if=&quot;taskNameIsShow[index]&quot; style=&quot;cursor: pointer;&quot;
+                      @click=&quot;showOrHide(index, taskNameIsShow)&quot;
+                &gt;{{ item.taskset_name }}&lt;/span&gt;
+                &lt;Input v-if=&quot;!taskNameIsShow[index]&quot; v-model=&quot;item.taskset_name&quot; placeholder=&quot;请输入链路名称&quot; clearable
+                       style=&quot;width: auto;&quot;
+                       @on-blur=&quot;showOrHide(index, taskNameIsShow)&quot;
+                /&gt;
+              &lt;/Col&gt;
+              &lt;Col span=&quot;1&quot; offset=&quot;17&quot;&gt;
+                &lt;Button type=&quot;text&quot; size=&quot;small&quot; style=&quot;color: red;&quot; @click=&quot;handleRemoveLink(index)&quot;&gt;删除链路&lt;/Button&gt;
+              &lt;/Col&gt;
+              &lt;Col span=&quot;1&quot; class=&quot;linkColClass&quot; @click.native=&quot;showOrHide(index, arrowIsShow)&quot; &gt;
+                &lt;Icon v-if=&quot;arrowIsShow[index]&quot; type=&quot;ios-arrow-down&quot;  size=&quot;25&quot; /&gt;
+                &lt;Icon v-if=&quot;!arrowIsShow[index]&quot; type=&quot;ios-arrow-forward&quot; size=&quot;25&quot; /&gt;
+              &lt;/Col&gt;
+            &lt;/Row&gt;
+            &lt;div v-if=&quot;arrowIsShow[index]&quot; style=&quot;margin-top: 15px;&quot;&gt;
+              &lt;Card dis-hover
+                    v-for=&quot;(api_item, api_index) in item.tasks&quot;
+                    :key=&quot;api_index&quot;
+                    style=&quot;margin-bottom: 15px;&quot;
+              &gt;
+                &lt;div&gt;
+                  &lt;Row&gt;
+                    &lt;Col span=&quot;2&quot; style=&quot;background-color: #00A0EE; width: 20px;text-align: center; margin-right: 10px;&quot;&gt;{{api_index + 1}}&lt;/Col&gt;
+                    &lt;Col :span=&quot;api_item.apiNameIsShow ? 2 : 4&quot;&gt;
+                      &lt;b v-if=&quot;api_item.apiNameIsShow&quot; style=&quot;line-height: 25px; cursor: pointer&quot;
+                         @click=&quot;linkShowOrHide(index, api_index, 'apiNameIsShow')&quot;&gt;{{api_item.name}}&lt;/b&gt;
+                      &lt;Input v-if=&quot;!api_item.apiNameIsShow&quot; size=&quot;small&quot; v-model=&quot;api_item.name&quot;
+                             placeholder=&quot;请输入接口名称&quot; clearable style=&quot;width: auto;&quot;
+                             @on-blur=&quot;linkShowOrHide(index, api_index, 'apiNameIsShow')&quot;
+                      /&gt;
+                    &lt;/Col&gt;
+                    &lt;Col span=&quot;1&quot; style=&quot;width: 80px;&quot;&gt;
+                      &lt;Select v-model=&quot;api_item.method&quot; size=&quot;small&quot; @on-change=&quot;linkShowOrHide(index, api_index, 'methodSelectIsShow')&quot;&gt;
+                        &lt;Option value=&quot;GET&quot;&gt;GET&lt;/Option&gt;
+                        &lt;Option value=&quot;POST&quot;&gt;POST&lt;/Option&gt;
+                      &lt;/Select&gt;
+                    &lt;/Col&gt;
+                    &lt;Col span=&quot;5&quot;&gt;
+                      &lt;Input size=&quot;small&quot; v-model=&quot;api_item.url&quot; placeholder=&quot;请输入API路径&quot; clearable /&gt;
+                    &lt;/Col&gt;
+                    &lt;Col span=&quot;1&quot; offset=&quot;9&quot;&gt;
+                      &lt;Button type=&quot;text&quot; size=&quot;small&quot; style=&quot;color: #2d8cf0;&quot; @click=&quot;handleCopyLink(index, api_index)&quot;&gt;复制API&lt;/Button&gt;
+                    &lt;/Col&gt;
+                    &lt;Col span=&quot;1&quot; align=&quot;center&quot;&gt;
+                      &lt;Button type=&quot;text&quot; size=&quot;small&quot; style=&quot;color: red;&quot; @click=&quot;handleRemoveAPI(index, api_index)&quot;&gt;
+                        &lt;Icon type=&quot;ios-trash&quot; size=&quot;20&quot; /&gt;
+                      &lt;/Button&gt;
+                    &lt;/Col&gt;
+                    &lt;Col span=&quot;1&quot; class=&quot;linkColClass&quot; @click.native=&quot;linkShowOrHide(index, api_index, 'apiSelectIsShow')&quot; &gt;
+                      &lt;Icon v-if=&quot;api_item.apiSelectIsShow&quot; type=&quot;ios-arrow-down&quot;  size=&quot;25&quot; /&gt;
+                      &lt;Icon v-if=&quot;!api_item.apiSelectIsShow&quot; type=&quot;ios-arrow-forward&quot; size=&quot;25&quot; /&gt;
+                    &lt;/Col&gt;
+                  &lt;/Row&gt;
+
+                  &lt;Divider v-if=&quot;api_item.apiSelectIsShow&quot; /&gt;
+
+                  &lt;Tabs v-if=&quot;api_item.apiSelectIsShow&quot; value=&quot;name1&quot; :animated=&quot;false&quot; style=&quot;margin-top: -15px&quot;&gt;
+                    &lt;TabPane label=&quot;请求头&quot; name=&quot;name1&quot;&gt;
+                      &lt;Row&gt;
+                        &lt;Col span=&quot;3&quot; style=&quot;margin-right: 15px;&quot;&gt;参数名&lt;/Col&gt;
+                        &lt;Col span=&quot;3&quot; style=&quot;margin-right: 15px;&quot;&gt;参数值&lt;/Col&gt;
+                        &lt;Col span=&quot;3&quot;&gt;操作&lt;/Col&gt;
+                      &lt;/Row&gt;
+                      &lt;Row
+                        style=&quot;margin-top: 7px;&quot;
+                        v-for=&quot;(header, h_index) in api_item.headers&quot;
+                        :key=&quot;h_index&quot;
+                      &gt;
+                        &lt;Col span=&quot;3&quot; style=&quot;margin-right: 15px;&quot;&gt;
+                          &lt;Input size=&quot;small&quot; v-model=&quot;header.label&quot; placeholder=&quot;添加参数&quot; clearable /&gt;
+                        &lt;/Col&gt;
+                        &lt;Col span=&quot;3&quot; style=&quot;margin-right: 15px;&quot;&gt;
+                          &lt;Input size=&quot;small&quot; v-model=&quot;header.value&quot; placeholder=&quot;参数值&quot; clearable /&gt;
+                        &lt;/Col&gt;
+                        &lt;Col span=&quot;3&quot;&gt;
+                          &lt;Icon type=&quot;ios-trash&quot; size=&quot;20&quot; style=&quot;color: #2d8cf0;cursor: pointer&quot;
+                                @click=&quot;handleRemoveHeader(index, api_index, h_index)&quot; /&gt;
+                        &lt;/Col&gt;
+                      &lt;/Row&gt;
+                      &lt;Button size=&quot;small&quot; style=&quot;margin-top: 15px;&quot; @click=&quot;handleAddHeader(index, api_index)&quot;&gt;添加&lt;/Button&gt;
+                    &lt;/TabPane&gt;
+                    &lt;TabPane :label=&quot;api_item.method === 'POST' ? '请求体' : '请求参数'&quot; name=&quot;name2&quot;&gt;
+                      &lt;Row v-if=&quot;api_item.methodSelectIsShow&quot; style=&quot;margin-bottom: 7px;&quot;&gt;
+                        &lt;Col span=&quot;10&quot;&gt;
+                          &lt;RadioGroup v-model=&quot;api_item.param_type&quot; @on-change=&quot;linkShowOrHide(index, api_index, 'radioSwitchIsShow')&quot;&gt;
+                            &lt;Radio label=&quot;raw&quot;&gt;&lt;/Radio&gt;
+                            &lt;Radio label=&quot;x-www-form-urlencoded&quot;&gt;&lt;/Radio&gt;
+                          &lt;/RadioGroup&gt;
+                        &lt;/Col&gt;
+                      &lt;/Row&gt;
+                      &lt;div v-if=&quot;!api_item.radioSwitchIsShow&quot;&gt;
+                        &lt;Row&gt;
+                          &lt;Col span=&quot;3&quot; style=&quot;margin-right: 15px;&quot;&gt;参数名&lt;/Col&gt;
+                          &lt;Col span=&quot;3&quot; style=&quot;margin-right: 15px;&quot;&gt;参数值&lt;/Col&gt;
+                          &lt;Col span=&quot;3&quot;&gt;操作&lt;/Col&gt;
+                        &lt;/Row&gt;
+                        &lt;Row
+                          style=&quot;margin-top: 7px;&quot;
+                          v-for=&quot;(get_data, g_index) in api_item.get_data&quot;
+                          :key=&quot;g_index&quot;
+                        &gt;
+                          &lt;Col span=&quot;3&quot; style=&quot;margin-right: 15px;&quot;&gt;
+                            &lt;Input size=&quot;small&quot; v-model=&quot;get_data.label&quot; placeholder=&quot;添加参数&quot; clearable /&gt;
+                          &lt;/Col&gt;
+                          &lt;Col span=&quot;3&quot; style=&quot;margin-right: 15px;&quot;&gt;
+                            &lt;Input size=&quot;small&quot; v-model=&quot;get_data.value&quot; placeholder=&quot;参数值&quot; clearable /&gt;
+                          &lt;/Col&gt;
+                          &lt;Col span=&quot;3&quot;&gt;
+                            &lt;Icon type=&quot;ios-trash&quot; size=&quot;20&quot; style=&quot;color: #2d8cf0;cursor: pointer&quot;
+                                  @click=&quot;handleRemoveGetData(index, api_index, g_index)&quot; /&gt;
+                          &lt;/Col&gt;
+                        &lt;/Row&gt;
+                        &lt;Button size=&quot;small&quot; style=&quot;margin-top: 15px;&quot; @click=&quot;handleAddGetData(index, api_index)&quot;&gt;添加&lt;/Button&gt;
+                      &lt;/div&gt;
+                      &lt;Row v-if=&quot;api_item.radioSwitchIsShow&quot;&gt;
+                        &lt;Col span=&quot;12&quot;&gt;
+                          &lt;Input v-model=&quot;api_item.post_data&quot; type=&quot;textarea&quot; :autosize=&quot;{minRows: 3,}&quot; placeholder=&quot;请求参数&quot; /&gt;
+                        &lt;/Col&gt;
+                      &lt;/Row&gt;
+                    &lt;/TabPane&gt;
+                    &lt;TabPane label=&quot;参数提取&quot; name=&quot;name3&quot;&gt;
+                      &lt;Row&gt;
+                        &lt;Col span=&quot;3&quot; style=&quot;margin-right: 15px;&quot;&gt;参数名&lt;/Col&gt;
+                        &lt;Col span=&quot;3&quot; style=&quot;margin-right: 15px;&quot;&gt;解析表达式&lt;/Col&gt;
+                        &lt;Col span=&quot;1&quot; style=&quot;margin-right: 15px;&quot;&gt;随机匹配&lt;/Col&gt;
+                        &lt;Col span=&quot;1&quot;&gt;操作&lt;/Col&gt;
+                      &lt;/Row&gt;
+                      &lt;Row
+                        style=&quot;margin-top: 7px;&quot;
+                        v-for=&quot;(extract, e_index) in api_item.extracts&quot;
+                        :key=&quot;e_index&quot;
+                      &gt;
+                        &lt;Col span=&quot;3&quot; style=&quot;margin-right: 15px;&quot;&gt;
+                          &lt;Input size=&quot;small&quot; v-model=&quot;extract.key&quot; placeholder=&quot;添加参数&quot; clearable /&gt;
+                        &lt;/Col&gt;
+                        &lt;Col span=&quot;3&quot; style=&quot;margin-right: 15px;&quot;&gt;
+                          &lt;Input size=&quot;small&quot; v-model=&quot;extract.expre&quot; placeholder=&quot;参数值&quot; clearable /&gt;
+                        &lt;/Col&gt;
+                        &lt;Col span=&quot;1&quot; style=&quot;margin-right: 15px;&quot;&gt;
+                          &lt;i-switch size=&quot;small&quot;  v-model=&quot;extract.randomness&quot;&gt;&lt;/i-switch&gt;
+                        &lt;/Col&gt;
+                        &lt;Col span=&quot;1&quot;&gt;
+                          &lt;Icon type=&quot;ios-trash&quot; size=&quot;20&quot; style=&quot;color: #2d8cf0;cursor: pointer&quot;
+                                @click=&quot;handleRemoveExtractData(index, api_index, e_index)&quot; /&gt;
+                        &lt;/Col&gt;
+                      &lt;/Row&gt;
+                      &lt;Button size=&quot;small&quot; style=&quot;margin-top: 15px;&quot; @click=&quot;handleAddExtractData(index, api_index)&quot;&gt;添加&lt;/Button&gt;
+                    &lt;/TabPane&gt;
+                    &lt;TabPane label=&quot;断言&quot; name=&quot;name4&quot;&gt;
+                      &lt;RadioGroup v-model=&quot;api_item.assert_type&quot;&gt;
+                        &lt;Radio :label=&quot;1&quot;&gt;返回状态码为200&lt;/Radio&gt;
+                        &lt;Radio :label=&quot;2&quot;&gt;返回内容包含&lt;/Radio&gt;
+                        &lt;Radio :label=&quot;3&quot;&gt;返回内容不包含&lt;/Radio&gt;
+                        &lt;Radio :label=&quot;4&quot;&gt;正则匹配返回结果&lt;/Radio&gt;
+                        &lt;Radio :label=&quot;5&quot;&gt;正则不匹配返回结果&lt;/Radio&gt;
+                      &lt;/RadioGroup&gt;
+                      &lt;Input v-model=&quot;api_item.key_word&quot; type=&quot;textarea&quot;
+                             :disabled=&quot;api_item.assert_type === 1&quot;
+                             :autosize=&quot;{minRows: 3,}&quot;
+                             :placeholder=&quot;assert_type_obj_placeholder[api_item.assert_type]&quot; /&gt;
+                    &lt;/TabPane&gt;
+                    &lt;TabPane label=&quot;配置&quot; name=&quot;name5&quot;&gt;
+                      &lt;Row&gt;
+                        &lt;Col span=&quot;3&quot;&gt;接口权重：&lt;InputNumber size=&quot;small&quot; v-model=&quot;api_item.task_weight&quot; style=&quot;width: 60px;&quot;
+                                                      placeholder=&quot;请输入&quot; clearable /&gt;&lt;/Col&gt;
+                      &lt;/Row&gt;
+                      &lt;Row style=&quot;margin-top: 7px;&quot;&gt;
+                        &lt;Col span=&quot;3&quot;&gt;失败继续：&lt;i-switch size=&quot;small&quot; v-model=&quot;api_item.is_continue&quot;&gt;&lt;/i-switch&gt;&lt;/Col&gt;
+                      &lt;/Row&gt;
+                    &lt;/TabPane&gt;
+                  &lt;/Tabs&gt;
+                &lt;/div&gt;
+              &lt;/Card&gt;
+              &lt;Button icon=&quot;md-add&quot; type=&quot;info&quot; size=&quot;small&quot; @click=&quot;handleAddAPI(index)&quot;&gt;添加API&lt;/Button&gt;
+            &lt;/div&gt;
+          &lt;/Card&gt;
+        &lt;/div&gt;
+      &lt;/Card&gt;
+
+      &lt;!--施压配置--&gt;
+      &lt;Card v-if=&quot;!isShow&quot;&gt;
+        &lt;div style=&quot;text-align:center&quot;&gt;
+          &lt;Card dis-hover&gt;
+            &lt;Table :columns=&quot;taskColumns&quot; :data=&quot;taskData&quot;&gt;&lt;/Table&gt;
+          &lt;/Card&gt;
+          &lt;Card dis-hover style=&quot;margin-top: 15px;&quot;&gt;
+            &lt;Row&gt;
+              &lt;Col span=&quot;2&quot;&gt;
+                &lt;b&gt;压力机数量配置：&lt;/b&gt;
+              &lt;/Col&gt;
+              &lt;Col span=&quot;3&quot;&gt;
+                &lt;InputNumber v-model=&quot;sceneFormData.loadgens&quot; placeholder=&quot;压力机数量配置&quot; style=&quot;width: auto&quot; /&gt;
+              &lt;/Col&gt;
+            &lt;/Row&gt;
+            &lt;Row style=&quot;margin-top: 10px;&quot;&gt;
+              &lt;Col span=&quot;2&quot;&gt;
+                &lt;b&gt;接口等待时间：&lt;/b&gt;
+              &lt;/Col&gt;
+              &lt;Col span=&quot;3&quot;&gt;
+                &lt;InputNumber v-model=&quot;sceneFormData.wait_time&quot; placeholder=&quot;接口等待时间&quot; style=&quot;width: auto&quot; /&gt;
+              &lt;/Col&gt;
+            &lt;/Row&gt;
+          &lt;/Card&gt;
+        &lt;/div&gt;
+      &lt;/Card&gt;
+    &lt;/div&gt;
+
+&lt;!--全局参数--&gt;
+    &lt;Drawer title=&quot;全局参数&quot;
+            :closable=&quot;false&quot;
+            width=&quot;55%&quot;
+            v-model=&quot;globalDrawer&quot;&gt;
+      &lt;Card dis-hover style=&quot;margin-bottom: 15px;&quot;&gt;
+        &lt;Upload multiple
+                accept=&quot;file&quot;
+                :before-upload=&quot;handleUpload&quot;
+                action=&quot;#&quot;&gt;
+          &lt;Button icon=&quot;ios-cloud-upload-outline&quot;&gt;选择文件&lt;/Button&gt;
+        &lt;/Upload&gt;
+        &lt;Row v-for=&quot;(item, key) in customFile&quot; :key=&quot;key&quot;&gt;
+          &lt;Col span=&quot;10&quot;&gt;
+            &lt;Alert size=&quot;small&quot;&gt;{{item.name}}&lt;/Alert&gt;
+          &lt;/Col&gt;
+          &lt;Col span=&quot;1&quot; style=&quot;cursor: pointer&quot; @click.native=&quot;removeFile(key)&quot;&gt;&lt;Icon size=&quot;30&quot; type=&quot;ios-trash&quot; /&gt;&lt;/Col&gt;
+        &lt;/Row&gt;
+      &lt;/Card&gt;
+
+      &lt;Card dis-hover&gt;
+        &lt;p slot=&quot;title&quot;&gt;自定义参数&lt;/p&gt;
+        &lt;Row
+          style=&quot;margin-top: 7px;&quot;
+          v-for=&quot;(v, i) in sceneFormData.variables&quot;
+          :key=&quot;i&quot;
+          :gutter=&quot;6&quot;
+        &gt;
+          &lt;Col span=&quot;6&quot;&gt;
+            &lt;Input size=&quot;small&quot; v-model=&quot;v.key&quot; placeholder=&quot;添加参数&quot; clearable style=&quot;width: auto;&quot; &gt;
+              &lt;span slot=&quot;prepend&quot;&gt;参数名：&lt;/span&gt;
+            &lt;/Input&gt;
+          &lt;/Col&gt;
+          &lt;Col span=&quot;5&quot;&gt;
+          &lt;span class=&quot;inputPrefix&quot;&gt;类型：&lt;/span&gt;
+            &lt;Select size=&quot;small&quot; v-model=&quot;v.variable_type&quot; style=&quot;width: auto;&quot; @on-change=&quot;switchOptionValue(v.variable_type, i)&quot;&gt;
+              &lt;Option :value=&quot;1&quot;&gt;固定值&lt;/Option&gt;
+              &lt;Option :value=&quot;2&quot;&gt;时间戳&lt;/Option&gt;
+              &lt;Option :value=&quot;3&quot;&gt;随机字符串&lt;/Option&gt;
+            &lt;/Select&gt;
+          &lt;/Col&gt;
+          &lt;Col span=&quot;6&quot; v-show=&quot;v.variable_type==1&quot;&gt;
+            &lt;Input size=&quot;small&quot; v-model=&quot;v.value&quot; placeholder=&quot;常量值&quot; clearable style=&quot;width: auto;&quot; &gt;
+              &lt;span slot=&quot;prepend&quot;&gt;常量值：&lt;/span&gt;
+            &lt;/Input&gt;
+          &lt;/Col&gt;
+          &lt;Col span=&quot;6&quot; v-show=&quot;v.variable_type==2&quot;&gt;
+            &lt;p style=&quot;display: inline-block;&quot;&gt; &lt;/p&gt;
+          &lt;/Col&gt;
+          &lt;Col span=&quot;6&quot; v-show=&quot;v.variable_type==3&quot;&gt;
+            &lt;Input size=&quot;small&quot; v-model=&quot;v.prefix&quot; placeholder=&quot;常量值&quot; clearable style=&quot;width: auto;&quot; &gt;
+              &lt;span slot=&quot;prepend&quot;&gt;前缀：&lt;/span&gt;
+            &lt;/Input&gt;
+          &lt;/Col&gt;
+          &lt;Col span=&quot;6&quot; v-show=&quot;v.variable_type==3&quot;&gt;
+            &lt;Input size=&quot;small&quot; v-model=&quot;v.suffix&quot; placeholder=&quot;常量值&quot; clearable style=&quot;width: auto;&quot; &gt;
+              &lt;span slot=&quot;prepend&quot;&gt;后缀：&lt;/span&gt;
+            &lt;/Input&gt;
+          &lt;/Col&gt;
+          &lt;Col span=&quot;6&quot; style=&quot;margin-top: 7px;&quot; v-show=&quot;v.variable_type==3&quot;&gt;
+            &lt;span class=&quot;inputPrefix&quot;&gt;随机字符串个数：&lt;/span&gt;&lt;InputNumber size=&quot;small&quot; v-model=&quot;v.length&quot; placeholder=&quot;常量值&quot; clearable style=&quot;width: 75px;&quot; /&gt;
+          &lt;/Col&gt;
+          &lt;Col span=&quot;6&quot; style=&quot;margin-top: 7px;&quot; v-show=&quot;v.variable_type==3&quot;&gt;
+            &lt;Input size=&quot;small&quot; v-model=&quot;v.ranges&quot; placeholder=&quot;常量值&quot; clearable style=&quot;width: auto;&quot; &gt;
+              &lt;span slot=&quot;prepend&quot;&gt;随机字符串范围：&lt;/span&gt;
+            &lt;/Input&gt;
+          &lt;/Col&gt;
+          &lt;Col span=&quot;1&quot; :offset=&quot;v.variable_type==3 ? 11 : 6&quot; :style=&quot;v.variable_type==3 ? 'margin-top: 7px' : ''&quot;&gt;
+            &lt;Icon type=&quot;ios-trash&quot; size=&quot;20&quot; style=&quot;color: #2d8cf0;cursor: pointer&quot;
+                  @click=&quot;removeGlobalConfig(i)&quot; /&gt;
+          &lt;/Col&gt;
+        &lt;/Row&gt;
+        &lt;Button size=&quot;small&quot; style=&quot;margin-top: 15px;&quot; @click=&quot;addGlobalConfig()&quot;&gt;添加&lt;/Button&gt;
+      &lt;/Card&gt;
+    &lt;/Drawer&gt;
+  &lt;/Form&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+// import {createScene, scenarioAction, taskExecUpdate} from '../api/performanceTesting'
+
+export default {
+  data () {
+    return {
+      page: '创建压测场景',
+      taskId: 1,
+      fileList: [],
+      customFile: [],
+      customDataType: 1,
+      taskColumns: [
+        {
+          title: '串联链路',
+          key: 'taskset_name'
+        },
+        {
+          title: 'API数量',
+          key: 'tasks',
+          render: (h, params) =&gt; {
+            return h('span', params.row.tasks.length)
+          }
+        },
+        {
+          title: '链路权重比',
+          key: 'taskset_weight',
+          render: (h, params) =&gt; {
+            return h('InputNumber', {
+              props: {
+                value: params.row.taskset_weight
+              },
+              style: {
+                width: &quot;100px&quot;
+              },
+              on: {
+                input: (value) =&gt; {
+                  this.sceneFormData.tasksets[params.row._index].taskset_weight = value
+                }
+              }
+            })
+          }
+        }
+      ],
+      taskData: [],
+      globalDrawer: false,
+      requestMethod: 'GET',
+      arrowIsShow: [true],
+      taskNameIsShow: [true],
+      isShow: true,
+      sceneBtn: '场景配置',
+      sceneDomainPre: 'http://',
+      linkObjIndex: 1,
+      apiObjIndex: 1,
+      assert_type_obj_placeholder: {
+        1: '判断返回状态码是否为200，并目返回内容不为空',
+        2: '判断返回状态码是否为200，并且校验返回内容包含指定字符串',
+        3: '判断返回状态码是否为200，并且校验返回内容不包含指定字符串',
+        4: '判断返回状态码是否为200，并且校验返回内容能够通过正则表达式的匹配',
+        5: '判断返回状态码是否为200，并且校验返回内容不能通过正则表达式的匹配',
+      },
+      sceneFormData: {
+        name: '',
+        host: '',
+        tasksets: [
+          {
+            taskset_weight: 1,
+            taskset_name: &quot;串联链路1&quot;,
+            tasks: [
+              {
+                name: &quot;api_1&quot;,
+                method: &quot;GET&quot;,
+                headers: [{label: 'content-type', value: 'application/json'}],
+                url: &quot;&quot;,
+                assert_type: 1,
+                key_word: &quot;&quot;,
+                is_continue: true,
+                task_weight: 1,
+                extracts:[],
+                get_data: [{label: '', value: ''}],
+                post_data: null,
+                param_type: 'x-www-form-urlencoded',
+                apiNameIsShow: true, // 标识是否开启编辑接口名称
+                apiSelectIsShow: true,
+                methodSelectIsShow: false,
+                radioSwitchIsShow: false,
+              }
+            ]
+          }
+        ],
+        variables: [],
+        loadgens: 2,
+        wait_time: 1
+      },
+      ruleInline: {
+        name: [
+          { required: true, message: '场景名称必填', trigger: 'blur' }
+        ],
+        host: [
+          { required: true, message: '域名必填', trigger: 'blur' }
+        ],
+        taskset_name: [
+          { required: true, message: '链路名称必填', trigger: 'blur' }
+        ],
+      }
+    }
+  },
+  methods: {
+    removeFile (i) {
+      this.customFile.splice(i, 1)
+    },
+    handleUpload (file) {
+      // 判断文件是否存在
+      if (this.fileList.includes(file.name)) {
+        return false
+      }
+      this.fileList.push(file.name)
+      let index_1 = file.name.lastIndexOf('.')
+      let index_2 = file.name.length
+      let type_ = file.name.substring(index_1 + 1, index_2)
+      if (type_ !== 'csv') {
+        this.$Notice.warning({
+          title: '文件格式不支持！',
+          desc: '文件 ' + file.name + ' 格式不允许, 只允许csv格式！'
+        })
+        return false
+      }
+      this.customFile.push(file)
+      return false
+    },
+    transferArrToDict (arr) {
+      // 将数组转换为对象
+      let obj = {};
+      arr.forEach(item =&gt; {
+        obj[item.label] = item.value;
+      });
+      return obj
+    },
+    transferDictToArr (obj) {
+      let key = Object.keys(obj)[0]
+      let value = obj[key]
+      return [{&quot;label&quot;: key, &quot;value&quot;: value}]
+    },
+    switchOptionValue (e, i) {
+      switch (e) {
+        case 1:
+          this.sceneFormData.variables.splice(i, 1)
+          this.sceneFormData.variables[i] = {
+            'variable_type': e,
+            'key': '',
+            'value': '',
+          }
+          break;
+        case 2:
+          this.sceneFormData.variables.splice(i, 1)
+          this.sceneFormData.variables[i] = {
+            'variable_type': e,
+            'key': '',
+          }
+          break;
+        case 3:
+          this.sceneFormData.variables.splice(i, 1)
+          this.sceneFormData.variables[i] = {
+            'variable_type': e,
+            'key': '',
+            'prefix': '',
+            'suffix': '',
+            'ranges': '',
+            'length': 1,
+          }
+          break;
+      }
+    },
+    removeGlobalConfig (i) {
+      this.sceneFormData.variables.splice(i,1)
+    },
+    addGlobalConfig () {
+      this.sceneFormData.variables.push({
+        'variable_type': 1,
+        'key': '',
+      })
+    },
+    // 复制API
+    handleCopyLink (f_index, child_index) {
+      this.sceneFormData.tasksets[f_index].tasks.push(this.sceneFormData.tasksets[f_index].tasks[child_index])
+    },
+    handleRemoveLink (i) {
+      this.sceneFormData.tasksets.splice(i, 1)
+    },
+    handleRemoveAPI (f_index, child_index) {
+      this.sceneFormData.tasksets[f_index].tasks.splice(child_index, 1)
+    },
+    linkShowOrHide (f_index, child_index, v) {
+      this.sceneFormData.tasksets[f_index].tasks[child_index][v] = !this.sceneFormData.tasksets[f_index].tasks[child_index][v]
+      if (this.sceneFormData.tasksets[f_index].tasks[child_index]['method'] === 'GET') {
+        this.sceneFormData.tasksets[f_index].tasks[child_index]['param_type'] = 'x-www-form-urlencoded'
+        this.sceneFormData.tasksets[f_index].tasks[child_index]['radioSwitchIsShow'] = false
+      }
+    },
+    showOrHide (i, box) {
+      box[i] = !box[i]
+      box.push(false)
+      box.pop()
+    },
+    handleAddAPI (f_index) {
+      this.apiObjIndex++;
+      this.sceneFormData.tasksets[f_index].tasks.push({
+        name: &quot;api_&quot; + this.apiObjIndex,
+        method: &quot;GET&quot;,
+        headers: [{label: 'content-type', value: 'application/json'}],
+        url: &quot;&quot;,
+        assert_type: 1,
+        key_word: &quot;&quot;,
+        is_continue: true,
+        task_weight: 1,
+        extracts:[{&quot;key&quot;:&quot;&quot;, &quot;expre&quot;:&quot;&quot;, &quot;randomness&quot;: true}],
+        get_data: [{label: '', value: ''}],
+        post_data: null,
+        param_type: 'x-www-form-urlencoded',
+        apiNameIsShow: true, // 标识是否开启编辑接口名称
+        apiSelectIsShow: true,
+        methodSelectIsShow: false,
+        radioSwitchIsShow: false,
+      })
+    },
+    // 添加请求头参数
+    handleAddHeader (f_index, child_index) {
+      this.sceneFormData.tasksets[f_index].tasks[child_index].headers.push({
+        label: '', value: ''
+      })
+    },
+    // 删除请求头参数
+    handleRemoveHeader (f_index, child_index, h_index) {
+      this.sceneFormData.tasksets[f_index].tasks[child_index].headers.splice(h_index, 1)
+    },
+    // 添加get请求参数
+    handleAddGetData (f_index, child_index) {
+      this.sceneFormData.tasksets[f_index].tasks[child_index].get_data.push({
+        label: '', value: ''
+      })
+    },
+    // 删除get请求参数
+    handleRemoveGetData (f_index, child_index, g_index) {
+      this.sceneFormData.tasksets[f_index].tasks[child_index].get_data.splice(g_index, 1)
+    },
+    // 参数提取添加参数
+    handleAddExtractData (f_index, child_index) {
+      this.sceneFormData.tasksets[f_index].tasks[child_index].extracts.push({
+        &quot;key&quot;:&quot;&quot;, &quot;expre&quot;:&quot;&quot;, &quot;randomness&quot;: true
+      })
+    },
+    // 参数提取删除参数
+    handleRemoveExtractData (f_index, child_index, e_index) {
+      this.sceneFormData.tasksets[f_index].tasks[child_index].extracts.splice(e_index, 1)
+    },
+    handleAddLink () {
+      this.linkObjIndex++;
+      this.arrowIsShow.push(false)
+      this.taskNameIsShow.push(true)
+      this.sceneFormData.tasksets.push(          {
+        taskset_weight: 1,
+        taskset_name: &quot;串联链路&quot; + this.linkObjIndex,
+        tasks: [
+          {
+            name: &quot;api_1&quot;,
+            method: &quot;GET&quot;,
+            headers: [{label: 'content-type', value: 'application/json'}],
+            url: &quot;&quot;,
+            assert_type: 1,
+            key_word: &quot;&quot;,
+            is_continue: true,
+            task_weight: 1,
+            extracts:[{&quot;key&quot;:&quot;&quot;, &quot;expre&quot;:&quot;&quot;, &quot;randomness&quot;: false}],
+            get_data: [{label: '', value: ''}],
+            post_data: null,
+            param_type: 'x-www-form-urlencoded',
+            apiNameIsShow: true, // 标识是否开启编辑接口名称
+            apiSelectIsShow: true,
+            methodSelectIsShow: false,
+            radioSwitchIsShow: false,
+          }
+        ]
+      })
+    },
+    switchGroup (t) {
+      this.isShow = t !== '施压配置';
+      this.taskData = this.sceneFormData.tasksets
+    },
+    saveScene (name) {
+      this.$refs[name].validate((valid) =&gt; {
+        if (valid) {
+          const task = this.sceneFormData.tasksets
+          for (let i=0; i&lt;task.length; i++) {
+            if (!task[i]['taskset_name']) {
+              this.$Message.error('链路名称必填!');
+              return
+            }
+            if (!task[i]['taskset_weight']) {
+              this.$Message.error('链路权重比必填!');
+              return
+            }
+            const t_child = task[i]['tasks']
+            // 处理前面自定义的数据类型，转换为接口需要的数据结构
+            for (let ii=0; ii&lt;t_child.length; ii++) {
+              // 请求头
+              t_child[ii]['headers'] = this.transferArrToDict(t_child[ii]['headers'])
+
+              // 请求参数
+              let json_data = {}
+              if (t_child[ii]['method'] === 'POST' &amp;&amp; t_child[ii]['param_type'] === 'raw') {
+                json_data = t_child[ii]['post_data'] ? JSON.parse(t_child[ii]['post_data']) : null
+              }
+              if (t_child[ii]['method'] === 'POST' &amp;&amp; t_child[ii]['param_type'] === 'x-www-form-urlencoded') {
+                json_data = this.transferArrToDict(t_child[ii]['get_data'])
+              }
+              if (t_child[ii]['method'] === 'GET') {
+                json_data = this.transferArrToDict(t_child[ii]['get_data'])
+              }
+              delete this.sceneFormData.tasksets[i].tasks[ii]['get_data']
+              delete this.sceneFormData.tasksets[i].tasks[ii]['post_data']
+              delete this.sceneFormData.tasksets[i].tasks[ii]['apiNameIsShow']
+              delete this.sceneFormData.tasksets[i].tasks[ii]['apiSelectIsShow']
+              delete this.sceneFormData.tasksets[i].tasks[ii]['methodSelectIsShow']
+              delete this.sceneFormData.tasksets[i].tasks[ii]['radioSwitchIsShow']
+              if (json_data) {t_child[ii]['json'] = json_data}
+              if (t_child[ii]['method'] === 'GET' &amp;&amp; json_data) {
+                t_child[ii]['params'] = json_data
+              }
+
+              if (t_child[ii]['method'] === 'POST' &amp;&amp; t_child[ii]['param_type'] === 'raw') {
+                t_child[ii]['json'] = json_data
+              } else {
+                t_child[ii]['data'] = json_data
+              }
+
+              // 断言
+              if (t_child[ii]['assert_type'] === 1) {
+                delete this.sceneFormData.tasksets[i].tasks[ii]['key_word']
+              }
+              if (t_child[ii]['assert_type'] === 2 || t_child[ii]['assert_type'] === 3) {
+                if (!t_child[ii]['key_word']) {
+                  this.$Message.error('返回内容不能为空!');
+                  return
+                }
+              }
+              if (t_child[ii]['assert_type'] === 4 || t_child[ii]['assert_type'] === 5) {
+                if (!t_child[ii]['key_word']) {
+                  this.$Message.error('返回内容不能为空!');
+                  return
+                }
+                t_child[ii]['pattern'] = t_child[ii]['key_word']
+                delete this.sceneFormData.tasksets[i].tasks[ii]['key_word']
+              }
+
+              // 配置
+              if (!t_child[ii]['task_weight']) {return this.$Message.error('接口权重不能为空!')}
+            }
+          }
+          this.sceneFormData.host = this.sceneDomainPre + this.sceneFormData.host
+          const formData = new FormData()
+          formData.append('FILES', this.customFile)
+          for (const f of this.customFile) {
+            formData.append('FILES', f)
+          }
+          formData.append('data', JSON.stringify(this.sceneFormData))
+
+          if (!this.taskId) {
+            // createScene(formData).then(res =&gt; {
+            //   let response = res.data
+            //   if (response.code !== 200) {
+            //     return this.$Message.error(res.message)
+            //   }
+            //
+            //   this.sceneFormData = {
+            //     name: '',
+            //     host: '',
+            //     tasksets: [
+            //       {
+            //         taskset_weight: 1,
+            //         taskset_name: &quot;串联链路1&quot;,
+            //         tasks: [
+            //           {
+            //             name: &quot;api_1&quot;,
+            //             method: &quot;GET&quot;,
+            //             headers: [{label: 'content-type', value: 'application/json'}],
+            //             url: &quot;gw/org-center/account/login-v2/&quot;,
+            //             assert_type: 1,
+            //             key_word: &quot;&quot;,
+            //             is_continue: true,
+            //             task_weight: 1,
+            //             extracts:[{&quot;key&quot;:&quot;&quot;, &quot;expre&quot;:&quot;&quot;, &quot;randomness&quot;: false}],
+            //             get_data: [{label: '', value: ''}],
+            //             post_data: null,
+            //             param_type: 'x-www-form-urlencoded',
+            //             apiNameIsShow: true, // 标识是否开启编辑接口名称
+            //             apiSelectIsShow: true,
+            //             methodSelectIsShow: false,
+            //             radioSwitchIsShow: false,
+            //           }
+            //         ]
+            //       }
+            //     ],
+            //     variables: [],
+            //     loadgens: 2,
+            //     wait_time: 1
+            //   }
+            //   this.$Message.success('场景创建成功!');
+            //   setTimeout(() =&gt; {
+            //     let route = this.$router.resolve({
+            //       name: 'sceneList',
+            //     })
+            //     window.open(route.href, &quot;_self&quot;)
+            //   }, 2000)
+            // })
+          } else {
+            // taskExecUpdate('POST', this.taskId, formData).then(res =&gt; {
+            //   let response = res.data
+            //   if (response.code !== 200) {
+            //     return this.$Message.error(res.message)
+            //   }
+            //
+            //   this.sceneFormData = {
+            //     name: '',
+            //     host: '',
+            //     tasksets: [
+            //       {
+            //         taskset_weight: 1,
+            //         taskset_name: &quot;串联链路1&quot;,
+            //         tasks: [
+            //           {
+            //             name: &quot;api_1&quot;,
+            //             method: &quot;GET&quot;,
+            //             headers: [{label: 'content-type', value: 'application/json'}],
+            //             url: &quot;&quot;,
+            //             assert_type: 1,
+            //             key_word: &quot;&quot;,
+            //             is_continue: true,
+            //             task_weight: 1,
+            //             extracts:[{&quot;key&quot;:&quot;&quot;, &quot;expre&quot;:&quot;&quot;, &quot;randomness&quot;: false}],
+            //             get_data: [{label: '', value: ''}],
+            //             post_data: null,
+            //             param_type: 'x-www-form-urlencoded',
+            //             apiNameIsShow: true, // 标识是否开启编辑接口名称
+            //             apiSelectIsShow: true,
+            //             methodSelectIsShow: false,
+            //             radioSwitchIsShow: false,
+            //           }
+            //         ]
+            //       }
+            //     ],
+            //     variables: [],
+            //     loadgens: 2,
+            //     wait_time: 1
+            //   }
+            //   this.$Message.success('场景更新成功!');
+            //   setTimeout(() =&gt; {
+            //     let route = this.$router.resolve({
+            //       name: 'sceneList',
+            //     })
+            //     window.open(route.href, &quot;_self&quot;)
+            //   }, 2000)
+            // })
+          }
+        } else {
+          this.$Message.error('请检查提交的参数!');
+        }
+      })
+    },
+    scenarioActionFunc () {
+      this.sceneFormData = []
+      // scenarioAction('GET', 'detail', this.taskId).then(res =&gt; {
+      //   if (res.data.code !== 200) {
+      //     this.$Message.error('获取详情报错！')
+      //     return false
+      //   }
+      //   let data = res.data.data
+      //   const task = data.tasksets
+      //   for (let i=0; i&lt;task.length; i++) {
+      //     this.taskNameIsShow.push(true)
+      //     const t_child = task[i]['tasks']
+      //     // 处理前面自定义的数据类型，转换为接口需要的数据结构
+      //     for (let ii=0; ii&lt;t_child.length; ii++) {
+      //       // 请求头
+      //       t_child[ii]['headers'] = this.transferDictToArr(t_child[ii]['headers'])
+      //
+      //       data.tasksets[i].tasks[ii]['apiSelectIsShow'] = false
+      //       data.tasksets[i].tasks[ii]['apiNameIsShow'] = false
+      //
+      //       data.tasksets[i].tasks[ii]['param_type'] = t_child[ii]['param_type']
+      //
+      //       if (t_child[ii]['method'] !== 'GET') {
+      //         data.tasksets[i].tasks[ii]['methodSelectIsShow'] = true
+      //       } else {
+      //         data.tasksets[i].tasks[ii]['methodSelectIsShow'] = false
+      //         data.tasksets[i].tasks[ii]['radioSwitchIsShow'] = false
+      //         data.tasksets[i].tasks[ii]['get_data'] = this.transferDictToArr(t_child[ii]['json'])
+      //       }
+      //       if (t_child[ii]['method'] === 'POST' &amp;&amp; t_child[ii]['param_type'] === 'raw') {
+      //         data.tasksets[i].tasks[ii]['radioSwitchIsShow'] = true
+      //         data.tasksets[i].tasks[ii]['get_data'] = []
+      //         data.tasksets[i].tasks[ii]['post_data'] = t_child[ii]['json']
+      //         t_child[ii]['post_data'] = JSON.stringify(t_child[ii]['json'])
+      //       }
+      //       if (t_child[ii]['method'] === 'POST' &amp;&amp; t_child[ii]['param_type'] === 'x-www-form-urlencoded') {
+      //         data.tasksets[i].tasks[ii]['radioSwitchIsShow'] = false
+      //         data.tasksets[i].tasks[ii]['get_data'] = this.transferDictToArr(t_child[ii]['json'])
+      //         data.tasksets[i].tasks[ii]['post_data'] = []
+      //       }
+      //
+      //       // 断言
+      //       if (t_child[ii]['assert_type'] === 1) {
+      //         data.tasksets[i].tasks[ii]['key_word'] = &quot;&quot;
+      //       }
+      //       if (t_child[ii]['assert_type'] === 2 || t_child[ii]['assert_type'] === 3) {
+      //         data.tasksets[i].tasks[ii]['key_word'] = &quot;&quot;
+      //       }
+      //       if (t_child[ii]['assert_type'] === 4 || t_child[ii]['assert_type'] === 5) {
+      //         data.tasksets[i].tasks[ii]['key_word'] = t_child[ii]['pattern']
+      //       }
+      //
+      //       // 配置
+      //       if (!t_child[ii]['task_weight']) {return this.$Message.error('接口权重不能为空!')}
+      //     }
+      //   }
+      //   let url = new URL(data.host);
+      //   data.host = url.host
+      //   this.sceneFormData = data
+      // })
+    }
+  },
+  mounted() {
+    this.page = this.$route.query.page
+    this.taskId = this.$route.query.id
+    if (this.taskId) {this.scenarioActionFunc()}
+  }
+}
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+.linkColClass {
+  text-align: right;
+}
+.linkColClass:hover {
+  color: #5cadff;
+  cursor: pointer;
+}
+.inputPrefix {
+  border: 1px solid #dcdee2;
+  padding: 4px 0 5px 7px;
+  background-color: #f8f8f9;
+  font-size: 12px;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  margin-top: 3px;
+}
+&lt;/style&gt;
+
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2021 - 2024
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://github.com/numachen/numachen.github.io" target="_blank" rel="noopener" title="github" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+    
+  </body>
+</html>

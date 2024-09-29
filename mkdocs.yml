@@ -61,13 +61,14 @@ nav:
           - frontend/vue/one.md
       - Components:
           - frontend/component/one.md
+          - frontend/component/two.md
   - 后端:
       - backend/index.md
       - Flask:
 #          - backend/flask/myfirst.md
           - backend/flask/one.md
       - Django:
-          - backend/django/index.md
+          - backend/django/one.md
 #  - 云原生:
 #      - blog/index.md
 #      - blog/tags.md
