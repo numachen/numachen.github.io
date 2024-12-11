@@ -68,7 +68,15 @@ nav:
 #          - backend/flask/myfirst.md
           - backend/flask/one.md
       - Django:
-          - backend/django/one.md
+        - backend/django/one.md
+      - Go:
+        - backend/go/one.md
+  - 基础设施:
+        - infrastructure/index.md
+        - Linux:
+            - infrastructure/linux/one.md
+        - 工具集:
+            - infrastructure/tools/sentry.md
 #  - 云原生:
 #      - blog/index.md
 #      - blog/tags.md
