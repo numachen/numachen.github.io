@@ -71,6 +71,8 @@ nav:
         - backend/django/one.md
       - Go:
         - backend/go/one.md
+        - backend/go/two.md
+        - backend/go/three.md
   - 基础设施:
         - infrastructure/index.md
         - Linux:
