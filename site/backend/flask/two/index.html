@@ -12,9 +12,13 @@
         <meta name="author" content="numa">
       
       
-        <link rel="canonical" href="https://www.numachen.github.io/blog/author/team/">
+        <link rel="canonical" href="https://www.numachen.github.io/backend/flask/two/">
       
       
+        <link rel="prev" href="../one/">
+      
+      
+        <link rel="next" href="../../django/one/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>The Material Team - 名笔记</title>
+        <title>Flask多线程+缓存功能实现接口毫秒级响应 - 名笔记</title>
       
     
     
@@ -64,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-material-team" class="md-skip">
+        <a href="#flask" class="md-skip">
           跳转至
         </a>
       
@@ -100,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The Material Team
+              Flask多线程+缓存功能实现接口毫秒级响应
             
           </span>
         </div>
@@ -455,6 +459,8 @@
       
   
   
+    
+  
   
   
     
@@ -473,16 +479,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../backend/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -499,7 +505,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             后端
@@ -512,8 +518,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -524,11 +532,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -542,7 +550,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Flask
@@ -556,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backend/flask/one/" class="md-nav__link">
+      <a href="../one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -574,10 +582,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../backend/flask/two/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Flask多线程+缓存功能实现接口毫秒级响应
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -586,6 +614,53 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      前言
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      准备工作
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码实现
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -645,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backend/django/one/" class="md-nav__link">
+      <a href="../../django/one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -717,7 +792,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backend/go/one/" class="md-nav__link">
+      <a href="../../go/one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -738,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backend/go/two/" class="md-nav__link">
+      <a href="../../go/two/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -759,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../backend/go/three/" class="md-nav__link">
+      <a href="../../go/three/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1006,6 +1081,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      前言
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      准备工作
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      代码实现
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1022,15 +1132,111 @@
   
 
 
-<h1 id="the-material-team">The Material Team</h1>
-<p>A small group of people dedicated to making writing documentation easy, if
-not outright fun! Here are some of the things we have blogged about:</p>
+<h1 id="flask">Flask多线程+缓存功能实现接口毫秒级响应</h1>
+<h3 id="_1">前言</h3>
+<p>最近有一个需求，需要实现有一个接口，获取CMDB里的服务和部门之间的关系，需要代码处理成一个树状结构，但是这个接口需要毫秒级响应，所以需要使用多线程+缓存功能实现接口毫秒级响应。</p>
+<!-- more -->
+
+<h3 id="_2">准备工作</h3>
+<p><code>pip install Flask-Caching</code></p>
+<h3 id="_3">代码实现</h3>
+<pre><code class="language-python"># 入口配置缓存
+from flask_caching import Cache
+import config
+
+app = Flask(__name__)
+api = Api(app, catch_all_404s=True)
+
+cache = Cache()
+cache.init_app(app, config={'CACHE_TYPE': 'SimpleCache'})
+</code></pre>
+<pre><code class="language-python"># 业务代码
+import json
+
+from flask import request
+from flask_restful import Resource
+from concurrent.futures import ThreadPoolExecutor
+
+from config.app import cache
+from utils import response, get_ci, add_ci, update_ci, delete_ci
+
+
+def fetch_department(item):
+    bu = item['qmai_bu_name']
+    department_data = {
+        'id': bu,
+        'label': bu,
+        'children': [],
+    }
+    group_id = item['_id']
+    group_payload = {
+        'q': f&quot;_type:70&quot;,
+        'root_id': group_id,
+        'count': 10000,
+    }
+    group_data = get_ci(group_payload, '/api/v0.1/ci_relations/s')
+    tmp = []
+    for item2 in group_data['result']:
+        _id = item2['_id']
+        group_name = item2['group_name']
+        tem_dict = {
+            'id': group_name,
+            'label': group_name,
+            'children': [],
+        }
+        app_param = {
+            'q': f&quot;_type:56&quot;,
+            'root_id': _id,
+            'count': 10000,
+        }
+        app_data = get_ci(app_param, '/api/v0.1/ci_relations/s')
+        for item3 in app_data['result']:
+            app_name = item3['app_name']
+            tem_dict['children'].append({'id': app_name, 'label': app_name})
+        tmp.append(tem_dict)
+    department_data['children'].extend(tmp)
+    return department_data
+
+
+class GetDepartmentProRelation(Resource):
+    &quot;&quot;&quot;获取部门与项目的关系&quot;&quot;&quot;
+
+    @cache.cached(timeout=7 * 24 * 3600)
+    def get(self):
+        bu_payload = {
+            'q': f&quot;_type:55&quot;,
+            'root_id': 322,
+            'use_id_filter': 1,
+            'count': 10000,
+        }
+        # 1. 获得部门和应用的树形结构； 2. 根据应用获取对应部门
+        # 一级部门：55，二级部门：70，获取应用：56
+        map_data = get_ci(bu_payload, '/api/v0.1/ci_relations/s')
+        department = {
+            'id': '企迈公共SaaS',
+            'label': '企迈公共SaaS',
+            'children': [],
+        }
+        result = []
+
+        with ThreadPoolExecutor(max_workers=20) as executor:
+            futures = [executor.submit(fetch_department, item) for item in map_data['result']]
+            for future in futures:
+                result.append(future.result())
+        department['children'].extend(result)
+
+        return response(data=department)
+
+</code></pre>
 
 
 
 
 
 
+
+  
+  
 
 
 
