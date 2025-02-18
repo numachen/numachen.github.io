@@ -67,6 +67,7 @@ nav:
       - Flask:
 #          - backend/flask/myfirst.md
           - backend/flask/one.md
+          - backend/flask/two.md
       - Django:
         - backend/django/one.md
       - Go:
