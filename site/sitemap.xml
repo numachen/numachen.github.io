@@ -136,6 +136,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://www.numachen.github.io/frontend/vue/two/</loc>
+         <lastmod>2025-02-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://www.numachen.github.io/infrastructure/</loc>
          <lastmod>2025-02-18</lastmod>
          <changefreq>daily</changefreq>

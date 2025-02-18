@@ -59,6 +59,7 @@ nav:
       - frontend/index.md
       - Vue:
           - frontend/vue/one.md
+          - frontend/vue/two.md
       - Components:
           - frontend/component/one.md
           - frontend/component/two.md

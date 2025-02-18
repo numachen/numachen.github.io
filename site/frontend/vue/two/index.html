@@ -12,21 +12,25 @@
         <meta name="author" content="numa">
       
       
-        <link rel="canonical" href="https://www.numachen.github.io/blog/">
+        <link rel="canonical" href="https://www.numachen.github.io/frontend/vue/two/">
       
       
+        <link rel="prev" href="../one/">
       
       
-      <link rel="icon" href="../assets/images/favicon.png">
+        <link rel="next" href="../../component/one/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
-        <title>云原生 - 名笔记</title>
+        <title>Vue支持树形结构的组件 - 名笔记</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.3cba04c6.min.css">
       
       
 
@@ -45,7 +49,7 @@
       
     
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -64,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#vue" class="md-skip">
           跳转至
         </a>
       
@@ -80,7 +84,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href=".." title="名笔记" class="md-header__button md-logo" aria-label="名笔记" data-md-component="logo">
+    <a href="../../.." title="名笔记" class="md-header__button md-logo" aria-label="名笔记" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -100,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              云原生
+              Vue支持树形结构的组件
             
           </span>
         </div>
@@ -187,7 +191,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="名笔记" class="md-nav__button md-logo" aria-label="名笔记" data-md-component="logo">
+    <a href="../../.." title="名笔记" class="md-nav__button md-logo" aria-label="名笔记" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -217,7 +221,7 @@
   
   
     <li class="md-nav__item">
-      <a href=".." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -234,6 +238,8 @@
       
   
   
+    
+  
   
   
     
@@ -250,16 +256,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../frontend/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -276,7 +282,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             前端
@@ -289,8 +295,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -301,11 +309,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
@@ -319,7 +327,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Vue
@@ -333,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../frontend/vue/one/" class="md-nav__link">
+      <a href="../one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -351,10 +359,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../frontend/vue/two/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Vue支持树形结构的组件
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -363,6 +391,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 背景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 资料连接
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 项目使用
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 核心代码
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -424,7 +508,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../frontend/component/one/" class="md-nav__link">
+      <a href="../../component/one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -445,7 +529,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../frontend/component/two/" class="md-nav__link">
+      <a href="../../component/two/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -505,7 +589,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../backend/" class="md-nav__link ">
+            <a href="../../../backend/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -579,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../backend/flask/one/" class="md-nav__link">
+      <a href="../../../backend/flask/one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -600,7 +684,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../backend/flask/two/" class="md-nav__link">
+      <a href="../../../backend/flask/two/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -668,7 +752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../backend/django/one/" class="md-nav__link">
+      <a href="../../../backend/django/one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -740,7 +824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../backend/go/one/" class="md-nav__link">
+      <a href="../../../backend/go/one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -761,7 +845,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../backend/go/two/" class="md-nav__link">
+      <a href="../../../backend/go/two/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -782,7 +866,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../backend/go/three/" class="md-nav__link">
+      <a href="../../../backend/go/three/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -840,7 +924,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../infrastructure/" class="md-nav__link ">
+            <a href="../../../infrastructure/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -912,7 +996,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/linux/one/" class="md-nav__link">
+      <a href="../../../infrastructure/linux/one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -980,7 +1064,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../infrastructure/tools/sentry/" class="md-nav__link">
+      <a href="../../../infrastructure/tools/sentry/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1036,45 +1120,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#happy-10th-birthday-material-for-mkdocs" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      Happy 10th birthday, Material for MkDocs!
+      1. 背景
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#happy-speak-like-a-pirate-day-to-all" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      Happy speak like a pirate day to all!
+      2. 资料连接
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#happy-sysadmin-appreciation-day" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      Happy sysadmin appreciation day!
+      3. 项目使用
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#may-the-4th-be-with-you" class="md-nav__link">
+  <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      May the 4th be with you!
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#happy-may-day" class="md-nav__link">
-    <span class="md-ellipsis">
-      Happy May Day!
+      4. 核心代码
     </span>
   </a>
   
@@ -1089,201 +1164,388 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="_1">云原生</h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2026-02-09 00:00:00">2026年2月9日</time></li>
-        
-        
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="vue">Vue支持树形结构的组件</h1>
+<h2 id="1">1. 背景</h2>
+<p>Vue项目中，需要展示树形结构的数据，并且需要支持筛选，搜索等功能，于是找到了<a href="https://github.com/riophae/vue-treeselect">vue-treeselect</a>这个组件，这个组件功能很强大。</p>
+<h2 id="2">2. 资料连接</h2>
+<ul>
+<li>仓库：https://github.com/riophae/vue-treeselect</li>
+<li>文档：https://vue-treeselect.js.org/</li>
+</ul>
+<h2 id="3">3. 项目使用</h2>
+<pre><code class="language-html">npm install --save @riophae/vue-treeselect
+</code></pre>
+<h2 id="4">4. 核心代码</h2>
+<pre><code class="language-html">&lt;template&gt;
+  &lt;Card shadow&gt;
+    &lt;Row type=&quot;flex&quot; style=&quot;margin-bottom: 15px;&quot;&gt;
+      &lt;Col span=&quot;10&quot; style=&quot;float: left;&quot;&gt;
+        &lt;h4&gt;配置详情：&lt;b style=&quot;font-size: 17px;&quot;&gt;{{ this.$route.query['name'] }}&lt;/b&gt;&lt;/h4&gt;
+      &lt;/Col&gt;
+      &lt;Col span=&quot;3&quot; style=&quot;float: left;&quot;&gt;
+        &lt;h4&gt;动作：&lt;b style=&quot;font-size: 17px;&quot;&gt;{{ this.$route.query['action'] }}&lt;/b&gt;&lt;/h4&gt;
+      &lt;/Col&gt;
+      &lt;Col span=&quot;1&quot; offset=&quot;10&quot;&gt;
+        &lt;Button type=&quot;primary&quot; :loading=&quot;loading&quot; @click=&quot;refresh&quot; size=&quot;small&quot;&gt;
+          &lt;span v-if=&quot;!loading&quot;&gt;刷新&lt;/span&gt;
+          &lt;span v-else&gt;加载&lt;/span&gt;
+        &lt;/Button&gt;
+      &lt;/Col&gt;
+    &lt;/Row&gt;
+    &lt;Row style=&quot;margin-bottom: 15px;&quot;&gt;
+      &lt;Col span=&quot;6&quot;&gt;
+        &lt;DatePicker type=&quot;datetimerange&quot; placeholder=&quot;选择时间范围&quot; style=&quot;width: 300px&quot;
+                    @on-change=&quot;getTime&quot; :confirm=&quot;false&quot;&gt;&lt;/DatePicker&gt;
+      &lt;/Col&gt;
+      &lt;Col span=&quot;7&quot;&gt;
+        &lt;treeselect v-model=&quot;relationValue&quot;
+                    placeholder=&quot;选择部门或者应用&quot;
+                    :show-count=&quot;true&quot;
+                    :options=&quot;relationsData&quot; /&gt;
+      &lt;/Col&gt;
+    &lt;/Row&gt;
+
+    &lt;Table :loading=&quot;tableLoading&quot; border :columns=&quot;detailColumns&quot; :data=&quot;detailData&quot;&gt;&lt;/Table&gt;
+  &lt;/Card&gt;
+&lt;/template&gt;
+&lt;script&gt;
+import Treeselect from '@riophae/vue-treeselect'
+import '@riophae/vue-treeselect/dist/vue-treeselect.css'
+import { getHpaObj } from &quot;@/api/devops-tools&quot;;
+import { getDepartmentAndAppRelation } from &quot;@/api/devops-tools&quot;;
+export default {
+  components: { Treeselect },
+  data () {
+    return {
+      copiedData: null,
+      relationsData: null,
+      relationValue: '企迈公共SaaS',
+      startTime: null,
+      endTime: null,
+      tableLoading: true,
+      loading: false,
+      detailColumns: [
+        {
+          title: '项目',
+          key: 'project',
+          minWidth: 160,
+          maxWidth: 200
+        },
+        {
+          title: '应用',
+          key: 'app',
+          width: 200,
+        },
+        {
+          title: '部门',
+          key: 'department',
+          width: 200,
+          render: (h, params) =&gt; {
+            console.log(params.row._index, this.detailData)
+            let tmp = this.relationsData[0]['children']
+            let d = ''
+            for (let i = 0; i &lt; tmp.length; i++) {
+              d = this.findDepartment(tmp[i], params.row.app)
+              if (d) {
+                this.detailData[params.row._index]['department'] = d['id']
+                return h('span', d['id'])
+              }
+            }
+          }
+        },
+        {
+          title: '最小POD数',
+          key: 'pod_min',
+          width: 110,
+          align: 'center',
+          render: (h, params) =&gt; {
+            let analysis = null
+            let cpu = null
+            if (params.row.analysis) {
+              analysis = params.row.analysis
+            }
+            if (analysis) {
+              cpu = analysis.hasOwnProperty('cpu_usage') ? analysis.cpu_usage : 0
+            }
+            // params.row.category !== 'k8s' ? '' : (cpu &lt; 25 &amp;&amp; params.row.pod_min &gt; 5 ? '冗余' : '')
+            return h('div', {
+              style: {
+                background: params.row.category !== 'k8s' ? '' : (cpu &lt; 25 &amp;&amp; params.row.pod_min &gt; 5 ? '#5cadff' : '')
+              }
+            }, [h('Badge', {
+              props: {
+                // status:'warning',
+                text: params.row.category !== 'k8s' ? '' : (cpu &lt; 25 &amp;&amp; params.row.pod_min &gt; 5 ? '冗余' : ''),
+                'class-name': 'demoBadge',
+              },
+              style: {
+                fontSize: '10px !important;'
+              }
+            }, [h('span', params.row.pod_min)])])
+          }
+        },
+        {
+          title: '最大POD数',
+          key: 'pod_max',
+          width: 110,
+          align: 'center'
+        },
+        {
+          title: '总处理能力(最大值预估)',
+          width: 160,
+          render: (h, params) =&gt; {
+            let analysis = null
+            if (params.row.analysis) {
+              analysis = params.row.analysis
+            }
+            let qps = null
+            let tps = null
+            let query_time = []
+            let created_time = null
+            let pods = null
+            if (analysis) {
+              qps = analysis.hasOwnProperty('qps') ? Math.ceil(analysis.qps) + '(qps/s)' : ''
+              tps = analysis.hasOwnProperty('tps') ? Math.ceil(analysis.tps) + '(tps/s)' : ''
+              query_time = analysis.hasOwnProperty('query_time_area') ? analysis.query_time_area : []
+              created_time = analysis.hasOwnProperty('created_time') ? analysis.created_time : null
+              pods = analysis.hasOwnProperty('pods') ? analysis.pods : null
+            }
+            return h('div', {
+              class: 'textClass',
+            }, [
+              h('Tooltip', {
+                props: {
+                  placement: 'top',
+                  content: '查询时间：' + query_time[0] + ' ~' + query_time[1] + '\n' +
+                  '触发时间：' + created_time,
+                  transfer: true,
+                  maxWidth: 350,
+                },
+              },
+              [h('span', {
+                style: {whiteSpace: 'normal', wordBreak: 'break-all', fontWeight: 'bold', cursor: 'pointer'}
+              }, [h('p', { style: {fontWeight: 'bold'}}, [
+              h('span', qps),
+              h('span', tps)
+              ]), h('p', { style: {fontWeight: 'bold'}}, pods ? '当时POD数量：' + pods : '')])]
+            )
+            ]);
+          }
+        },
+        {
+          title: '单POD处理能力(最大值预估)',
+          width: 120,
+          render: (h, params) =&gt; {
+            let analysis = null
+            if (params.row.analysis) {
+              analysis = params.row.analysis
+            }
+            let qps = null
+            let tps = null
+            if (analysis) {
+              qps = analysis.hasOwnProperty('pod_qps') ? analysis.pod_qps + '(qps/s)' : ''
+              tps = analysis.hasOwnProperty('pod_tps') ? analysis.pod_tps + '(tps/s)' : ''
+            }
+            return h('div', {
+              class: 'textClass',
+            },[h('span', {
+                style: {whiteSpace: 'normal', wordBreak: 'break-all', fontWeight: 'bold', cursor: 'pointer'}
+              }, [
+              h('p', qps),
+              h('p', tps)
+              ])]);
+          }
+        },
+        {
+          title: 'CPU/MEM',
+          key: 'level',
+          width: 120,
+          render: (h, params) =&gt; {
+            let analysis = null
+            if (params.row.analysis) {
+              analysis = params.row.analysis
+            }
+            let cpu = ''
+            let mem = ''
+            if (analysis) {
+              cpu = analysis.hasOwnProperty('cpu_usage') ? parseFloat(analysis.cpu_usage) : 0
+              mem = analysis.hasOwnProperty('mem_usage') ? parseFloat(analysis.mem_usage).toFixed(2) + '%(mem)' : ''
+            }
+            return h('div', {
+              class: 'textClass',
+            }, [h('div', {
+                style: {whiteSpace: 'normal', wordBreak: 'break-all', fontWeight: 'bold', cursor: 'pointer'}
+              }, [
+                h('p', { style: {fontWeight: 'bold', background: typeof cpu === 'number' &amp;&amp; cpu &lt; 25 ? '#5cadff' : ''}}, typeof cpu === 'number' ? cpu.toFixed(2) + '%(cpu)' : cpu),
+                h('p', { style: {fontWeight: 'bold'}}, mem)])]);
+          }
+        },
+        {
+          title: '类别',
+          key: 'category',
+          width: 80,
+          align: 'center'
+        },
+        {
+          title: 'HPA名称',
+          key: 'hpa_name',
+          minWidth: 160,
+        },
+        {
+          title: '集群名称',
+          key: 'cluster',
+          width: 110,
+          align: 'center'
+        },
+        {
+          title: '优先级',
+          key: 'level',
+          width: 110,
+          align: 'center'
+        },
+      ],
+      detailData: [],
+      isInitialRelationValueChange: true, // 新增标志变量
+    }
+  },
+  methods: {
+    findDepartment(tree, targetApp) {
+      // 递归查找部门
+      if (typeof tree === 'object' &amp;&amp; tree !== null) {
+        if (tree.id === targetApp) {
+          return tree;
+        }
+        for (let key in tree) {
+          if (tree.hasOwnProperty(key)) {
+            const result = this.findDepartment(tree[key], targetApp);
+            if (result) {
+              return tree;
+            }
+          }
+        }
+      } else if (Array.isArray(tree)) {
+        for (let item of tree) {
+          const result = this.findDepartment(item, targetApp);
+          if (result) {
+            return result;
+          }
+        }
+      }
+      return null;
+    },
+    getTime (s) {
+      this.startTime = s[0]
+      this.endTime = s[1]
+      this.getHpaDetail()
+    },
+    refresh () {
+      this.loading = true
+      this.tableLoading = true
+      this.getHpaDetail()
+    },
+    getHpaDetail () {
+      this.tableLoading = true
+      let data = {
+        start_time: this.startTime,
+        end_time: this.endTime,
+      }
+      getHpaObj(this.$route.query['id'], data).then(res =&gt; {
+        if (res.status === 200) {
+          this.loading = false
+          this.tableLoading = false
+          this.detailData = res.data.data[0]['configs']
+        }
+      })
+    },
+    getRelations () {
+      getDepartmentAndAppRelation().then(res =&gt; {
+        let r = res.data
+        if (r.code !== 200) {
+          return this.$Message.error(r.message)
+        }
+        this.relationsData = r.data
+      })
+    },
+    filterDetailData(relationValue) {
+      if (!relationValue || !this.detailData) {
+        return;
+      }
+      this.detailData = this.copiedData.filter(item =&gt; {
+        return (item.department &amp;&amp; item.department.includes(relationValue))
+      });
+      if (this.detailData.length === 0) {
+        this.detailData = this.copiedData.filter(item =&gt; {
+          return (item.app &amp;&amp; item.app.includes(relationValue))
+        });
+      }
+    },
+  },
+  watch: {
+    relationValue(newVal) {
+      // 第一次初始化时，将数据拷贝到 copiedData 中
+      if (this.isInitialRelationValueChange) {
+        this.isInitialRelationValueChange = false; // 设置标志变量为 false
+        this.copiedData = JSON.parse(JSON.stringify(this.detailData))
+      }
+      if (!newVal) {
+        this.detailData = this.copiedData
+      }
+      this.filterDetailData(newVal);
+    }
+  },
+  mounted () {
+    this.getRelations()
+    this.getHpaDetail()
+  }
+}
+&lt;/script&gt;
+&lt;style&gt;
+.textClass {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  box-orient: vertical;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  max-height:42px
+}
+.demoBadge{
+  font-size: 9px;
+  top: -1px;
+  position: relative;
+  background-color: #ff9900;
+}
+&lt;/style&gt;
+</code></pre>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
           
-          <li class="md-meta__item">
-            
-              需要 1 分钟阅读时间
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="happy-10th-birthday-material-for-mkdocs"><a class="toclink" href="2026/02/09/happy-10th-birthday-material-for-mkdocs/">Happy 10th birthday, Material for MkDocs!</a></h2>
-<p>It has been an amazing journey.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2026/02/09/happy-10th-birthday-material-for-mkdocs/">
-          继续阅读
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-09-19 00:00:00">2024年9月19日</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              需要 1 分钟阅读时间
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="happy-speak-like-a-pirate-day-to-all"><a class="toclink" href="2024/09/19/happy-speak-like-a-pirate-day-to-all/">Happy speak like a pirate day to all!</a></h2>
-<p>Arr!</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2024/09/19/happy-speak-like-a-pirate-day-to-all/">
-          继续阅读
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-07-26 00:00:00">2024年7月26日</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              需要 1 分钟阅读时间
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="happy-sysadmin-appreciation-day"><a class="toclink" href="2024/07/26/happy-sysadmin-appreciation-day/">Happy sysadmin appreciation day!</a></h2>
-<p>Bake them a cake.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2024/07/26/happy-sysadmin-appreciation-day/">
-          继续阅读
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-05-04 00:00:00">2024年5月4日</time></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              需要 1 分钟阅读时间
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="may-the-4th-be-with-you"><a class="toclink" href="2024/05/04/may-the-4th-be-with-you/">May the 4th be with you!</a></h2>
-<p>Happy Star Wars Day to all!</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2024/05/04/may-the-4th-be-with-you/">
-          继续阅读
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-05-01 00:00:00">2024年5月1日</time></li>
-        
-          <li class="md-meta__item">
-            分类于
-            
-              <a href="category/holidays/" class="md-meta__link">Holidays</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              需要 1 分钟阅读时间
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="happy-may-day"><a class="toclink" href="2024/05/01/happy-may-day/">Happy May Day!</a></h2>
-<p>Happy May Day 2024 to everyone. Wishing you all the best!</p>
-
-    
-      <nav class="md-post__action">
-        <a href="2024/05/01/happy-may-day/">
-          继续阅读
-        </a>
-      </nav>
-    
-  </div>
-</article>
-      
-      
-        
-          
-
-
-
-<nav class="md-pagination">
-  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/">2</a>
-</nav>
-        
-      
-    </div>
-  </div>
-
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
@@ -1330,10 +1592,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
       
     
   </body>
