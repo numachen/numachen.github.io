@@ -77,6 +77,8 @@ nav:
         - backend/go/three.md
   - 基础设施:
         - infrastructure/index.md
+        - K8s:
+            - infrastructure/k8s/one.md
         - Linux:
             - infrastructure/linux/one.md
         - 工具集:
