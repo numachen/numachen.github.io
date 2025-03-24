@@ -60,21 +60,22 @@ nav:
       - Vue:
           - frontend/vue/one.md
           - frontend/vue/two.md
+          - frontend/vue/three.md
       - Components:
           - frontend/component/one.md
           - frontend/component/two.md
   - 后端:
       - backend/index.md
+      - Go:
+          - backend/go/one.md
+          - backend/go/two.md
+          - backend/go/three.md
       - Flask:
 #          - backend/flask/myfirst.md
           - backend/flask/one.md
           - backend/flask/two.md
       - Django:
         - backend/django/one.md
-      - Go:
-        - backend/go/one.md
-        - backend/go/two.md
-        - backend/go/three.md
   - 基础设施:
         - infrastructure/index.md
         - K8s:
@@ -83,6 +84,8 @@ nav:
             - infrastructure/linux/one.md
         - 工具集:
             - infrastructure/tools/sentry.md
+        - DevOps:
+          - infrastructure/DevOps/one.md
 #  - 云原生:
 #      - blog/index.md
 #      - blog/tags.md

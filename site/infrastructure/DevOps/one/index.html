@@ -12,13 +12,11 @@
         <meta name="author" content="numa">
       
       
-        <link rel="canonical" href="https://www.numachen.github.io/backend/go/two/">
+        <link rel="canonical" href="https://www.numachen.github.io/infrastructure/DevOps/one/">
       
       
-        <link rel="prev" href="../one/">
+        <link rel="prev" href="../../tools/sentry/">
       
-      
-        <link rel="next" href="../three/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -26,7 +24,7 @@
     
     
       
-        <title>携程&管道的一次实践 - 名笔记</title>
+        <title>GitLab Runner 磁盘扩容与权限配置指南 - 名笔记</title>
       
     
     
@@ -68,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#gitlab-runner" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              携程&amp;管道的一次实践
+              GitLab Runner 磁盘扩容与权限配置指南
             
           </span>
         </div>
@@ -505,8 +503,6 @@
       
   
   
-    
-  
   
   
     
@@ -525,16 +521,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../../backend/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -551,7 +547,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             后端
@@ -564,10 +560,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -580,11 +574,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
         
           
           <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
@@ -598,7 +592,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Go
@@ -612,7 +606,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../one/" class="md-nav__link">
+      <a href="../../../backend/go/one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -630,30 +624,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    携程&amp;管道的一次实践
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../backend/go/two/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -662,44 +636,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      背景
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      代码实现
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -712,7 +648,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../three/" class="md-nav__link">
+      <a href="../../../backend/go/three/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -782,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../flask/one/" class="md-nav__link">
+      <a href="../../../backend/flask/one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -803,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../flask/two/" class="md-nav__link">
+      <a href="../../../backend/flask/two/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -871,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../django/one/" class="md-nav__link">
+      <a href="../../../backend/django/one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -904,6 +840,8 @@
       
   
   
+    
+  
   
   
     
@@ -924,16 +862,16 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../infrastructure/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -950,7 +888,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             基础设施
@@ -1005,7 +943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../infrastructure/k8s/one/" class="md-nav__link">
+      <a href="../../k8s/one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1073,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../infrastructure/linux/one/" class="md-nav__link">
+      <a href="../../linux/one/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1141,7 +1079,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../infrastructure/tools/sentry/" class="md-nav__link">
+      <a href="../../tools/sentry/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1167,8 +1105,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1177,11 +1117,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" checked>
         
           
           <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
@@ -1195,7 +1135,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_5">
             <span class="md-nav__icon md-icon"></span>
             DevOps
@@ -1206,10 +1146,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../infrastructure/DevOps/one/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    GitLab Runner 磁盘扩容与权限配置指南
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1218,6 +1178,218 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题背景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      解决方案
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="解决方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、磁盘扩容操作流程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、磁盘扩容操作流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 查看当前磁盘信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-devvdc" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 格式化新磁盘（以 /dev/vdc 为例）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 解除旧挂载
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 挂载新磁盘
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 配置永久挂载
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、权限配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、权限配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 创建目录并设置所有者
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-gitlab-runner" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 重启 GitLab Runner
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、SSH 密钥配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、SSH 密钥配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 生成部署密钥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 部署公钥到目标机
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、CI/CD 部署配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      关键注意事项
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      故障排查记录
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="故障排查记录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      典型问题：构建成功但未同步文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1265,20 +1437,194 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      背景
+      问题背景
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      代码实现
+      解决方案
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="解决方案">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      一、磁盘扩容操作流程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一、磁盘扩容操作流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 查看当前磁盘信息
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-devvdc" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 格式化新磁盘（以 /dev/vdc 为例）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 解除旧挂载
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 挂载新磁盘
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 配置永久挂载
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      二、权限配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二、权限配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 创建目录并设置所有者
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-gitlab-runner" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 重启 GitLab Runner
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      三、SSH 密钥配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="三、SSH 密钥配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 生成部署密钥
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 部署公钥到目标机
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      四、CI/CD 部署配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      关键注意事项
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      故障排查记录
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="故障排查记录">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      典型问题：构建成功但未同步文件
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1300,74 +1646,110 @@
   
 
 
-<h1 id="_1">携程&amp;管道的一次实践</h1>
-<h3 id="_2">背景</h3>
-<p>为了提升接口查询速度，将循环查询数据库的操作，使用go并发实现，基于goroutine&amp;channel实现</p>
-<h3 id="_3">代码实现</h3>
-<pre><code class="language-go">func getAppMetrics(l *TraceMapLogic, req *types.TopoNewReq, res [][]interface{}) (resp map[string]interface{}, err error) {
-    host := l.svcCtx.Config.MonitorDB.Host
-    user := l.svcCtx.Config.MonitorDB.User
-    pass := l.svcCtx.Config.MonitorDB.Password
-    dsn := fmt.Sprintf(&quot;%s:%s@tcp(%s:3306)/monitor_report?charset=utf8mb4&amp;parseTime=True&amp;loc=Local&quot;, user, pass, host)
-    conn := sqlx.NewMysql(dsn)
-    result := &amp;types.QueryServerMetric{}
-    var server = make(map[string]interface{})
+<h1 id="gitlab-runner">GitLab Runner 磁盘扩容与权限配置指南</h1>
+<!-- more -->
 
-    var c []*types.ServerMetrics
-    var wg sync.WaitGroup
-    // 创建一个通道来接收子节点数据
-    childChan := make(chan *types.ServerMetrics, len(res))
-    errChan := make(chan error, len(res))
-    for _, value := range res {
-        wg.Add(1)
-        go func(val []interface{}) {
-            defer wg.Done()
-            query := &quot;SELECT pods, cpu_usage, mem_usage, qps FROM monitor_report_statistics.monitor_statistics WHERE app_name = ? ORDER BY id DESC&quot;
-            err := conn.QueryRowCtx(context.Background(), result, query, val[0])
-            // 检查是否有数据
-            if err != nil {
-                errChan &lt;- err
-                return
-            }
-            var child = &amp;types.ServerMetrics{
-                Name:    val[0].(string),
-                Value:   val[0].(string),
-                ID:      uuid.New().String(),
-                Warning: nil,
-            }
-            child.Metrics.Pods = result.Pods
-            child.Metrics.CpuUsage = math.Round(result.CpuUsage*10) / 10
-            child.Metrics.MemUsage = math.Round(result.MemUsage*10) / 10
-            child.Metrics.Qps = math.Round(result.Qps*10) / 10
-            childChan &lt;- child
-            fmt.Println(&quot;Goroutine completed for:&quot;, child)
-        }(value)
-    }
-    go func() {
-        wg.Wait()
-        close(childChan)
-        close(errChan)
-    }()
+<h2 id="_1">问题背景</h2>
+<p>研发触发 GitLab CI/CD 流水线时出现以下问题：
+1. 初始提示 <code>Node.js 环境缺失</code>
+2. 安装环境后触发 <code>磁盘空间不足</code> 告警（原 <code>/opt</code> 目录挂载 20G 磁盘）
+3. 添加 100G 新磁盘后因权限问题导致流水线构建异常</p>
+<hr />
+<h2 id="_2">解决方案</h2>
+<h3 id="_3">一、磁盘扩容操作流程</h3>
+<h4 id="1">1. 查看当前磁盘信息</h4>
+<pre><code class="language-bash">lsblk
 
-    // 使用无限循环读取通道数据
-    for {
-        select {
-        case child, ok := &lt;-childChan:
-            if !ok {
-                goto done
-            }
-            c = append(c, child)
-        case err := &lt;-errChan:
-            if err != nil {
-                return nil, err
-            }
-        }
-    }
-done:
-    server[&quot;children&quot;] = c
-    return server, nil
-}
+NAME   MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+vda    253:0    0   20G  0 disk /
+vdb    253:16   0  100G 0 disk /opt
 </code></pre>
+<h4 id="2-devvdc">2. 格式化新磁盘（以 /dev/vdc 为例）</h4>
+<pre><code class="language-bash">sudo mkfs.ext4 /dev/vdc
+</code></pre>
+<h4 id="3">3. 解除旧挂载</h4>
+<pre><code class="language-bash"># 查看占用进程
+lsof /opt
+fuser -m -v /opt
+
+# 强制卸载（若存在占用）
+sudo umount -l /dev/vdb1 /opt
+</code></pre>
+<h4 id="4">4. 挂载新磁盘</h4>
+<pre><code class="language-bash">sudo mount /dev/vdc /opt
+</code></pre>
+<h4 id="5">5. 配置永久挂载</h4>
+<pre><code class="language-bash">echo '/dev/vdc /opt ext4 defaults 0 0' | sudo tee -a /etc/fstab
+</code></pre>
+<h3 id="_4">二、权限配置</h3>
+<h4 id="1_1">1. 创建目录并设置所有者</h4>
+<pre><code class="language-bash">sudo mkdir -p /www/home
+sudo chown -R www:www /opt
+sudo chown -R www:www /www/home
+</code></pre>
+<h4 id="2-gitlab-runner">2. 重启 GitLab Runner</h4>
+<pre><code class="language-bash">sudo systemctl restart gitlab-runner
+sudo systemctl status gitlab-runner
+</code></pre>
+<h3 id="ssh">三、SSH 密钥配置</h3>
+<h4 id="1_2">1. 生成部署密钥</h4>
+<pre><code class="language-bash">ssh-keygen -t rsa -b 4096 -C &quot;gitlab-runner@server&quot;
+cat /root/.ssh/id_rsa.pub
+</code></pre>
+<h4 id="2">2. 部署公钥到目标机</h4>
+<pre><code class="language-bash"># 在目标服务器执行
+mkdir -p /home/www/.ssh
+echo &quot;PUBLIC_KEY_CONTENT&quot; &gt;&gt; /home/www/.ssh/authorized_keys
+chmod 600 /home/www/.ssh/authorized_keys
+</code></pre>
+<h3 id="cicd">四、CI/CD 部署配置</h3>
+<pre><code class="language-bash">deploy_job:
+  script:
+    - webpath=/www/web/${CI_PROJECT_PATH_SLUG}/public_html
+    - ssh www@192.168.192.69 &quot;mkdir -p ${webpath}&quot;
+    - rsync --quiet -azv --delete ${buildSrc} www@192.168.192.69:${webpath}
+</code></pre>
+<h2 id="_5">关键注意事项</h2>
+<ul>
+<li>
+<p><strong>数据备份</strong></p>
+<ul>
+<li>挂载新磁盘前务必备份 <code>/opt</code> 目录数据</li>
+<li>推荐使用 <code>rsync -av /opt/ /tmp/opt_backup/</code></li>
+</ul>
+</li>
+<li>
+<p><strong>权限继承</strong></p>
+<ul>
+<li>挂载后需重新设置目录权限：
+ <code>chmod 755 /opt
+ chmod g+s /opt</code></li>
+</ul>
+</li>
+<li>
+<p><strong>服务依赖</strong></p>
+<ul>
+<li>重启 GitLab Runner 后验证服务状态：
+ <code>journalctl -u gitlab-runner -n 50 --no-pager</code></li>
+</ul>
+</li>
+<li>
+<p><strong>空间验证</strong>
+     <code>df -h /opt | grep -v Filesystem | awk '{print "可用空间：" $4 "/" $2}'</code></p>
+</li>
+</ul>
+<hr />
+<h2 id="_6">故障排查记录</h2>
+<h3 id="_7">典型问题：构建成功但未同步文件</h3>
+<p><strong>原因分析</strong>
+<code>/www/home</code> 目录未正确设置所有者导致静默失败</p>
+<p><strong>解决方案</strong></p>
+<pre><code>sudo chown -R www:www /www/home
+find /www/home -type d -exec chmod 2775 {} \;
+</code></pre>
+<blockquote>
+<p>可通过 <code>CI_DEBUG_TRACE: "true"</code> 开启详细日志输出定位隐蔽问题</p>
+</blockquote>
 
 
 
