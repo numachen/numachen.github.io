@@ -84,6 +84,7 @@ nav:
             - infrastructure/linux/one.md
         - 工具集:
             - infrastructure/tools/sentry.md
+            - infrastructure/tools/two.md
         - DevOps:
           - infrastructure/DevOps/one.md
 #  - 云原生:
