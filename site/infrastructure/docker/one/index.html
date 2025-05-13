@@ -12,13 +12,13 @@
         <meta name="author" content="numa">
       
       
-        <link rel="canonical" href="https://www.numachen.github.io/infrastructure/tools/two/">
+        <link rel="canonical" href="https://www.numachen.github.io/infrastructure/docker/one/">
       
       
-        <link rel="prev" href="../sentry/">
+        <link rel="prev" href="../../DevOps/one/">
       
       
-        <link rel="next" href="../../DevOps/one/">
+        <link rel="next" href="../two/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Windows下使用软件连接解决C盘满的问题 - 名笔记</title>
+        <title>Docker运行Nginx - 名笔记</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#windowsc" class="md-skip">
+        <a href="#dockernginx" class="md-skip">
           跳转至
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Windows下使用软件连接解决C盘满的问题
+              Docker运行Nginx
             
           </span>
         </div>
@@ -1099,10 +1099,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -1114,11 +1112,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
         
           
           <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
@@ -1134,7 +1132,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_4">
             <span class="md-nav__icon md-icon"></span>
             工具集
@@ -1148,7 +1146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sentry/" class="md-nav__link">
+      <a href="../../tools/sentry/" class="md-nav__link">
         
   
   
@@ -1168,32 +1166,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Windows下使用软件连接解决C盘满的问题
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../tools/two/" class="md-nav__link">
         
   
   
@@ -1204,35 +1180,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      操作步骤
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1323,8 +1270,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1336,11 +1285,11 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" checked>
         
           
           <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
@@ -1356,7 +1305,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_6">
             <span class="md-nav__icon md-icon"></span>
             Docker
@@ -1367,10 +1316,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../docker/one/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Docker运行Nginx
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1381,6 +1352,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      问题背景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装及配置
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1393,7 +1402,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../docker/two/" class="md-nav__link">
+      <a href="../two/" class="md-nav__link">
         
   
   
@@ -1453,7 +1462,16 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      操作步骤
+      问题背景
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装及配置
     </span>
   </a>
   
@@ -1478,11 +1496,86 @@
   
 
 
-<h1 id="windowsc">Windows下使用软件连接解决C盘满的问题</h1>
-<h4 id="_1">操作步骤</h4>
-<pre><code class="language-bash"># 1. 使用SpaceSniffer软件分析C盘占用情况
-# 2. 使用Windows中mklink命令创建软链接
-mklink /d &quot;C:\Users\chenwenming\AppData\Local\JetBrains\IntelliJIdea2023.3&quot; &quot;D:\AppData\Local\JetBrains\IntelliJIdea2023.3&quot;
+<h1 id="dockernginx">Docker运行Nginx</h1>
+<!-- more -->
+
+<h3 id="_1">问题背景</h3>
+<p>工作中使用到Nginx，原生的安装方式，繁琐且麻烦，还会遇到各种未知难解的问题，因此使用Docker。</p>
+<hr />
+<h3 id="_2">安装及配置</h3>
+<pre><code class="language-bash">######################
+##   普通运行        ##
+######################
+
+# 创建文件夹，上传文件，启动容器
+mkdir -p /etc/nginx/conf.d
+mkdir -p /var/log/nginx
+
+docker run -d --name nginx-server \
+  -p 80:80 \
+  -v /www:/www \
+  -v /etc/nginx/conf.d:/etc/nginx/conf.d \
+  -v /var/log/nginx:/var/log/nginx \
+  registry.cn-shanghai.aliyuncs.com/numa-images/nginx:1.18.0
+
+
+
+######################
+## nginx配置证书     ##
+######################
+
+1. 存放证书目录
+mkdir -p /etc/nginx/ssl
+
+
+2. 启动命令
+docker run -d --name nginx-server \
+   -p 80:80 \
+   -p 443:443 \
+   -v /www:/www \
+   -v /etc/nginx/conf.d:/etc/nginx/conf.d \
+   -v /etc/nginx/nginx.conf:/etc/nginx/nginx.conf \
+   -v /etc/nginx/ssl:/etc/nginx/ssl \
+   -v /var/log/nginx:/var/log/nginx \
+   registry.cn-shanghai.aliyuncs.com/numa-images/nginx:1.18.0
+
+3. 配置文件
+server {
+    listen 80;
+    listen 443 ssl;
+    server_name your_domain.com;
+
+    # SSL配置
+    ssl_certificate /etc/nginx/ssl/server.crt;
+    ssl_certificate_key /etc/nginx/ssl/server.key;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;
+    ssl_prefer_server_ciphers on;
+
+    # 网站根目录
+    root /www;
+    index index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # 错误页面
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+        root /usr/share/nginx/html;
+    }
+}
+
+4. 重启容器
+docker restart nginx-server
+
+
+######################
+## 导出导入nginx镜像  ##
+######################
+docker save nginx:1.18.0 &gt; nginx.tar
+docker load -i nginx.tar
 </code></pre>
 
 
